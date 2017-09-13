@@ -115,6 +115,17 @@ define([
                             nexturl = nexturl.replace('https:', window.location.protocol);
                         }
                     }
+                    requirejs(['jquery', 'weltpixel_quickview' ],
+                        function   ($, quickview) {
+                            $(document).ready(function() {
+                                $('.weltpixel-quickview').bind('click', function() {
+                                    var prodUrl = $(this).attr('data-quickview-url');
+                                    if (prodUrl.length) {
+                                        quickview.displayContent(prodUrl);
+                                    }
+                                });
+                            });
+                        });
                     return nexturl;
                 };
                 // custom infinitescroll done event:
