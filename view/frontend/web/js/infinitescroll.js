@@ -127,13 +127,13 @@ define([
                             });
                         });
 
-                    jQuery('.category-products-grid ol .item').mouseenter(function(){
-                        jQuery(this).find('.overlay_quickview').show(200);
-                        jQuery(this).find('.button_hover').show();
+                    jQuery('.category-products-grid ol .product-item-info').mouseenter(function(){
+                        jQuery(this).find('.overlay_quickview').show();
+                        jQuery(this).find('.button_hover').css('opacity', '1');
                     });
-                    jQuery('.category-products-grid ol .item').mouseleave(function(){
+                    jQuery('.category-products-grid ol .product-item-info').mouseleave(function(){
                         jQuery(this).find('.overlay_quickview').hide();
-                        jQuery(this).find('.button_hover').hide();
+                        jQuery(this).find('.button_hover').css('opacity', '0');
                     });
 
                     return nexturl;
